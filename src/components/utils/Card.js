@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Card({ id, label, type, defaultValue, hasDetails }) {
-  const [value, setValue] = useState(defaultValue);
-
+function Card({
+  name,
+  label,
+  type,
+  hasDetails,
+  onChange,
+  value,
+  uniqID = undefined,
+}) {
   return (
     <div className="details">
-      <label htmlFor={id}>{label}: </label>
+      <label htmlFor={name}>{label}: </label>
       {hasDetails ? (
         <div>{value}</div>
       ) : (
         <input
-          id={id}
+          name={name}
           type={type}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => onChange(e, name, uniqID)}
         />
       )}
     </div>
