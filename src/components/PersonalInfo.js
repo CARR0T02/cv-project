@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
+import Card from './utils/Card';
 
 function PersonalInfo() {
-  const [name, setName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
   const [hasDetails, setHasDetails] = useState(false);
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,48 +14,31 @@ function PersonalInfo() {
   }
 
   return (
-    <section class="info-container">
+    <section className="info-container">
       <form name="personal-info">
-        <div class="details">
-          <label htmlFor="name">Name: </label>
-          {hasDetails ? (
-            <div>{name}</div>
-          ) : (
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          )}
-        </div>
-        <div class="details">
-          <label htmlFor="phone-number">Phone Number:</label>
-          {hasDetails ? (
-            <div>{phoneNumber}</div>
-          ) : (
-            <input
-              id="phone-number"
-              type="number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          )}
-        </div>
-        <div class="details">
-          <label htmlFor="email">Email:</label>
-          {hasDetails ? (
-            <div>{email}</div>
-          ) : (
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          )}
-        </div>
+        <Card
+          id="name"
+          label="Name"
+          type="text"
+          defaultValue=""
+          hasDetails={hasDetails}
+        />
+        <Card
+          id="phone-number"
+          label="Phone Number"
+          type="number"
+          defaultValue=""
+          hasDetails={hasDetails}
+        />
+        <Card
+          id="email"
+          label="Email"
+          type="email"
+          defaultValue=""
+          hasDetails={hasDetails}
+        />
         {hasDetails ? (
-          <button class="edit-btn" onClick={handleEdit}>
+          <button className="edit-btn" onClick={handleEdit}>
             Edit
           </button>
         ) : (
