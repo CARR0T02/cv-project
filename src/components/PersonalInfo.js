@@ -3,6 +3,11 @@ import Card from './utils/Card';
 
 function PersonalInfo() {
   const [hasDetails, setHasDetails] = useState(false);
+  const [info, setInfo] = useState({
+    name: '',
+    phoneNumber: '',
+    email: '',
+  });
   function handleSubmit(e) {
     e.preventDefault();
     setHasDetails(true);
@@ -13,29 +18,36 @@ function PersonalInfo() {
     setHasDetails(false);
   }
 
+  function handleChange(e, name) {
+    setInfo({ ...info, [name]: e.target.value });
+  }
+
   return (
     <section className="info-container">
       <form name="personal-info">
         <Card
-          id="name"
+          name="name"
           label="Name"
           type="text"
-          defaultValue=""
           hasDetails={hasDetails}
+          onChange={handleChange}
+          value={info.name}
         />
         <Card
-          id="phone-number"
+          name="phoneNumber"
           label="Phone Number"
           type="number"
-          defaultValue=""
           hasDetails={hasDetails}
+          onChange={handleChange}
+          value={info.phoneNumber}
         />
         <Card
-          id="email"
+          name="email"
           label="Email"
           type="email"
-          defaultValue=""
           hasDetails={hasDetails}
+          onChange={handleChange}
+          value={info.email}
         />
         {hasDetails ? (
           <button className="edit-btn" onClick={handleEdit}>
