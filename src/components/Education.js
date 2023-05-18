@@ -28,6 +28,7 @@ function Education() {
 
   return (
     <section className="education">
+      <h2 className="title">Education</h2>
       {cards.map((card) => (
         <EducationCard
           deleteCard={deleteCard}

@@ -24,6 +24,7 @@ function PersonalInfo() {
 
   return (
     <section className="info-container">
+      <h2 className="title">Personal Information</h2>
       <form name="personal-info">
         <Card
           name="name"
