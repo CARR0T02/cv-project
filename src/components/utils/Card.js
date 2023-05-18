@@ -10,12 +10,13 @@ function Card({
   uniqID = undefined,
 }) {
   return (
-    <div className="details">
+    <div className="is-flex card-content">
       <label htmlFor={name}>{label}: </label>
       {hasDetails ? (
-        <div>{value}</div>
+        <span>{value}</span>
       ) : (
         <input
+          className="input is-small is-rounded"
           name={name}
           type={type}
           value={value}

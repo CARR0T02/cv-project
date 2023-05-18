@@ -25,7 +25,7 @@ function PersonalInfo() {
   return (
     <section className="info-container">
       <h2 className="title">Personal Information</h2>
-      <form name="personal-info">
+      <form name="personal-info" className="card mb-5">
         <Card
           name="name"
           label="Name"
@@ -50,15 +50,21 @@ function PersonalInfo() {
           onChange={handleChange}
           value={info.email}
         />
-        {hasDetails ? (
-          <button className="edit-btn" onClick={handleEdit}>
-            Edit
-          </button>
-        ) : (
-          <button type="submit" onClick={handleSubmit}>
-            Save
-          </button>
-        )}
+        <div className="card-footer">
+          {hasDetails ? (
+            <span className="clickable card-footer-item" onClick={handleEdit}>
+              Edit
+            </span>
+          ) : (
+            <span
+              className="clickable card-footer-item"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Save
+            </span>
+          )}
+        </div>
       </form>
     </section>
   );

@@ -1,0 +1,45 @@
+.main {
+  margin: 1rem 7rem;
+}
+
+.button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+label {
+  width: 10rem;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    color: #272622;
+    background-color: #ccb7a7;
+    transition: all ease-in 200ms;
+  }
+}
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Update Bulma's global variables
+$family-sans-serif: 'Nunito', sans-serif;
+$border-light: #e9e4cf;
+$primary: #b4c7d4;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: #ecead3;
+$card-background-color: #cfbaab;
+
+// Import only what you need from Bulma
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/form/_all.sass';
+@import '../node_modules/bulma/sass/layout/section.sass';
+@import '../node_modules/bulma/sass/helpers/_all';
+@import '../node_modules/bulma/sass/components/card.sass';

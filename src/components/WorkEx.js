@@ -39,7 +39,7 @@ function WorkEx() {
           key={card.uniqID}
         />
       ))}
-      <button id="add-work-btn" onClick={addCard}>
+      <button className="button is-primary" id="add-work-btn" onClick={addCard}>
         Add
       </button>
     </section>

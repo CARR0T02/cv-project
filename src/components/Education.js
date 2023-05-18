@@ -38,7 +38,11 @@ function Education() {
           key={card.uniqID}
         />
       ))}
-      <button id="add-education-btn" onClick={addCard}>
+      <button
+        className="button is-primary"
+        id="add-education-btn"
+        onClick={addCard}
+      >
         Add
       </button>
     </section>

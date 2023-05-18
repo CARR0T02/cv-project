@@ -19,7 +19,7 @@ function EducationCard({ deleteCard, uniqID, handleChange, cardObj }) {
   }
 
   return (
-    <form name="education-info">
+    <form name="education-info" className="card mb-5">
       <Card
         name="school"
         label="School Name"
@@ -47,18 +47,24 @@ function EducationCard({ deleteCard, uniqID, handleChange, cardObj }) {
         value={cardObj.gradDate}
         uniqID={uniqID}
       />
-      {hasDetails ? (
-        <button className="edit-btn" onClick={handleEdit}>
-          Edit
-        </button>
-      ) : (
-        <button type="submit" onClick={handleSubmit}>
-          Save
-        </button>
-      )}
-      <button className="delete-btn" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className="card-footer">
+        {hasDetails ? (
+          <span className="clickable card-footer-item" onClick={handleEdit}>
+            Edit
+          </span>
+        ) : (
+          <span
+            className="clickable card-footer-item"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Save
+          </span>
+        )}
+        <span className="clickable card-footer-item" onClick={handleDelete}>
+          Delete
+        </span>
+      </div>
     </form>
   );
 }

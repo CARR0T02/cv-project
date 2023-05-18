@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import PersonalInfo from './components/PersonalInfo';
 import Education from './components/Education';
 import WorkEx from './components/WorkEx';

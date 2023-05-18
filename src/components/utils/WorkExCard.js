@@ -19,7 +19,7 @@ function WorkExCard({ deleteCard, uniqID, handleChange, cardObj }) {
   }
 
   return (
-    <form name="work-info">
+    <form name="work-info" className="card mb-5">
       <Card
         name="company"
         label="Company Name"
@@ -56,18 +56,24 @@ function WorkExCard({ deleteCard, uniqID, handleChange, cardObj }) {
         value={cardObj.duration}
         uniqID={uniqID}
       />
-      {hasDetails ? (
-        <button className="edit-btn" onClick={handleEdit}>
-          Edit
-        </button>
-      ) : (
-        <button type="submit" onClick={handleSubmit}>
-          Save
-        </button>
-      )}
-      <button className="delete-btn" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className="card-footer">
+        {hasDetails ? (
+          <span className="clickable card-footer-item" onClick={handleEdit}>
+            Edit
+          </span>
+        ) : (
+          <span
+            className="clickable card-footer-item"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Save
+          </span>
+        )}
+        <span className="clickable card-footer-item" onClick={handleDelete}>
+          Delete
+        </span>
+      </div>
     </form>
   );
 }
