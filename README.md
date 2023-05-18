@@ -1,6 +1,6 @@
 CV Application
 
-This application is to learn React.
+This application is to learn React. On top of that, I have tried to use Sass and Bulma for the web design.
 
 It includes the following:
 
