@@ -1,9 +1,7 @@
 CV Application
 
-This application is to learn React. On top of that, I have tried to use Sass and Bulma for the web design.
+This project acts as an introduction to React. I have practiced using states and props in this project. The states are used to handle inputs which are then used as props to be passed into a component to render. I tried to use Bulma, a CSS Framework.
 
-It includes the following:
+The CV Application consists of 3 sections, personal information, education and work experience. In each section, you have to fill up the respective inputs to generate a card under each section.
 
-- A section to add general information like name, email, phone number.
-- A section to add your educational experience (school name, title of study, date of study)
-- A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company)
+This project is part of The Odin Project, an open source course.
